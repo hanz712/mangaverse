@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Detail Manga</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .manga-detail-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+        @media(min-width: 768px) {
+            .manga-detail-wrapper { flex-direction: row; }
+        }
+        .detail-cover {
+            width: 100%;
+            max-width: 250px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin: 0 auto;
+        }
+        .detail-info { flex: 1; }
+        .detail-info h1 { margin-bottom: 10px; font-size: 2rem; }
+        .detail-meta { margin-bottom: 20px; color: var(--text-secondary); font-size: 0.9rem; }
+        .detail-meta span { color: var(--accent-color); font-weight: 600; }
+        .synopsis { font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px; text-align: justify; }
+        
+        .chapter-section { margin-top: 40px; }
+        .chapter-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .chapter-item {
+            background: rgba(255,255,255,0.03);
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .chapter-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body class="dark-theme">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Manga<span>Verse</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#popular">Popular</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="loading-state" class="loading-spinner"></div>
+        
+        <div id="manga-detail" class="hidden">
+            <div class="manga-detail-wrapper">
+                <img id="manga-cover" class="detail-cover" src="" alt="Cover">
+                <div class="detail-info">
+                    <h1 id="manga-title">Loading...</h1>
+                    <div class="detail-meta">
+                        Status: <span id="manga-status">-</span> | 
+                        Tahun: <span id="manga-year">-</span>
+                    </div>
+                    <h3>Sinopsis</h3>
+                    <p id="manga-description" class="synopsis">Memuat deskripsi...</p>
+                </div>
+            </div>
+
+            <section class="chapter-section">
+                <h2 class="section-title">Daftar Chapter (Bahasa Inggris)</h2>
+                <div class="chapter-list" id="chapter-container">
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/manga.js"></script>
+</body>
+</html>
