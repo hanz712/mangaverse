@@ -1,0 +1,38 @@
+/* css/responsive.css */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 12px 15px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: none;
+        order: 3;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        order: 2;
+    }
+
+    .nav-links a {
+        margin: 0;
+    }
+
+    .container {
+        padding-top: 160px;
+    }
+
+    .manga-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+    }
+
+    .manga-card-info h3 {
+        font-size: 0.8rem;
+    }
+}
