@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Modern Manga Reader</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="logo">Manga<span>Verse</span></a>
+            <div class="nav-links">
+                <a href="Index.html" class="active">Home</a>
+                <a href="#popular">Popular</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="Cari manga favoritmu...">
+            <div id="search-results" class="search-results-box hidden"></div>
+        </div>
+
+        <section class="trending-section">
+            <h2 class="section-title">Trending Sekarang</h2>
+            <div class="trending-slider" id="trending-container">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+        </section>
+
+        <section class="popular-section" id="popular">
+            <h2 class="section-title">Manga Populer</h2>
+            <div class="manga-grid" id="popular-container">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+        </section>
+
+        <div id="infinite-loading" class="loading-spinner hidden"></div>
+    </main>
+
+    <button id="back-to-top" class="back-to-top hidden">↑</button>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
